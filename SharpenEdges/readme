@@ -1,0 +1,18 @@
+EdgeManipulator Class provides various edge enhancement functions
+
+EdgeSharpener
+Applies 5x5 kernel to input image, producing output image with sharpened edges
+[[-1, -1, -1, -1, -1]
+[-1, 2, 2, 2, -1]
+[-1, 2, 8, 2, -1]
+[-1, 2, 2, 2, -1]
+[-1, -1, -1, -1, -1]] / 8.0
+
+Command Line Arguments
+Required Image Input Path, Bad Path Will Produce Unexpected Results
+"-i", "--image", help = "path to the image file being processed"
+Optional Output Image Path, Will Default to Timestamp if left blank
+"-o", "--output", help = "filename to write sharpened image", default=time.strftime("%Y%m%d-%H%M%S")+".jpg"
+
+python main.py -i "/imagepath.jpg" -o "outputpath.jpg"
+Applies kernel to input image, displays output image to user, and saves image with 's' keystroke
