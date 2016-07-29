@@ -1,4 +1,5 @@
 import numpy as np
+import numpy as np
 import cv2
 import time
 
@@ -70,3 +71,7 @@ class ComponentTracker():
       cv2.destroyAllWindows()
     else:
       cv2.destroyAllWindows()
+      
+
+if __name__ == "__main__":
+  print("ComponentTracker.py is library and is not intended to be run as 'main'")
