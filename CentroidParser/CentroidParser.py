@@ -1,16 +1,21 @@
 import re
+import os.path
 
 class CentroidParser():
   #constructor 
   #@param input_file path of text file to be parsed (centroid output file *.mnt)
   def __init__(self, input_file):
     self.input_path = input_file
+    #declare the compoent's attribute titles which correspond to Eagle *.mnt output file
     self.attribute_titles = ["PartDes", "x", "y", "rotation", "value", "package"]
+    #verify valid path for input file
+    assert os.path.isfile(self.input_path), "Invalid Input Path, Unable To Parse File " + input_file
     try:
       self.input_file = open(self.input_path)
     except IOError:
       print("Constructor: Unable to open file.")
-       
+
+      
         
   #@return path to file being read
   def getInputPath(self):
