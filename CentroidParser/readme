@@ -1,2 +1,4 @@
-The centroid data file contains all the information regarding the position and orientation of every surface mount component on the circuit board. It consists X location and Y location, the reference designator, rotation and side of PCB top or bottom. The centroid file should contain data only with respect to surface mount components. This file is required to place a component on the circuit board. 
+The centroid data file contains all the information regarding the position and orientation of every surface mount component on the 
+circuit board. It consists X location and Y location, the reference designator, rotation and side of PCB top or bottom. The centroid 
+file should contain data only with respect to surface mount components. This file is required to place a component on the circuit board. 
 
