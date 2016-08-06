@@ -1,3 +1,8 @@
+#Justin Johnson Summer 2016
+#CentroidPaser Class
+#Class accepts input centroid file and parses file to generate list of components
+#and a list for each component's attributes
+#Intended for use with Pick and Place Machine
 import re
 import os.path
 
@@ -6,17 +11,13 @@ class CentroidParser():
   #@param input_file path of text file to be parsed (centroid output file *.mnt)
   def __init__(self, input_file):
     self.input_path = input_file
-    #declare the compoent's attribute titles which correspond to Eagle *.mnt output file
-    self.attribute_titles = ["PartDes", "x", "y", "rotation", "value", "package"]
     #verify valid path for input file
     assert os.path.isfile(self.input_path), "Invalid Input Path, Unable To Parse File " + input_file
     try:
       self.input_file = open(self.input_path)
     except IOError:
       print("Constructor: Unable to open file.")
-
-      
-        
+  
   #@return path to file being read
   def getInputPath(self):
     return self.input_path   
@@ -28,11 +29,6 @@ class CentroidParser():
   #@return list of component descriptors
   def getComponentList(self):
     return self.input_file.readlines()
-  
-  #@return list that contains title of component attributes
-  def getAttributeTitles(self):
-    #array that displays component description heading
-    return self.attribute_titles
 
   #Resets file iterator to beginning by creating new file object
   def resetFileIterator(self):
