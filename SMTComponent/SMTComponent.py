@@ -1,7 +1,7 @@
 #Justin Johnson Summer 2016
 #SMTComponent Class
 #Accepts List of SMT Component attributes
-class SMTComponent():
+class SMTComponent(object):
   #constructor 
   #@param attributeList list of component's attributes
   def __init__(self, attributeList):
