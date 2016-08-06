@@ -9,7 +9,9 @@ class AltiumSMTComponent(SMTComponent):
   #@param attributeList list of component's attributes provided by Altium Centroid File
   def __init__(self, attributeList):
     print("\nAltiumSMTComponent init\n")
-    self.attribute_list = attributeList
+    #call parent constructor
+    super(AltiumSMTComponent, self).__init__(attributeList)
+    #assign instance variables from list passed to constructor
     self.designator, self.x_coord, self.y_coord, self.board_side, self.rotation, self.part_name = self.attribute_list
     #override the SMTComponent attribute titles with the appropriate titles provided by Altium Centroid output file
     self.attribute_titles = ["Ref Designator", "X Coordinate", "Y Coordinate", "Board Side", "Rotation", "Part Name"]
