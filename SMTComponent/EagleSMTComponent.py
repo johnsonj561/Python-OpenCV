@@ -9,8 +9,10 @@ class EagleSMTComponent(SMTComponent):
   #@param attributeList list of component's attributes, expects 6 attributes
   def __init__(self, attributeList):
     print("\nEagleSMTComponent init\n")
-    self.attribute_list = attributeList
-    self.description, self.x_coord, self.y_coord, self.rotation, self.value, self.package = self.attribute_list
+    #call parent constructor
+    super(EagleSMTComponent, self).__init__(attributeList)
+    #assign instance variables from list passed to constructor
+    self.description, self.x_coord, self.y_coord, self.rotation, self.value, self.package = attributeList
     #override the SMTComponent attribute titles with the appropriate titles provided by Eagle Centroid output file
     self.attribute_titles = ["Description", "X Coordinate", "Y Coordinate", "Rotation", "Value", "Package"]
     
