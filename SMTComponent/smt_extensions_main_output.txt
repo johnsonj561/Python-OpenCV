@@ -1,0 +1,83 @@
+C:\PythonWorkspace\SMTComponent>python main2.py -f "untitled.mnt"
+
+SMTComponent init
+
+0: C1
+1: 20.32
+2: 21.59
+3: 0
+4: 10u
+5: C0805
+
+
+EagleSMTComponent init
+
+Description: C1
+X Coordinate: 20.32
+Y Coordinate: 21.59
+Rotation: 0
+Value: 10u
+Package: C0805
+
+
+TESTING EagleSMTComponent Methods
+Changing description
+Changing X Coordinate
+Changing Y Coordinate
+Changing Rotation
+Changing value
+Changing package name
+
+Reprinting component attributes
+
+Description: Hello
+X Coordinate: 55
+Y Coordinate: 89
+Rotation: -45
+Value: 1550
+Package: NewPackage
+
+Printing component attributes using getter methods
+Hello
+55
+89
+1550
+10u
+NewPackage
+
+AltiumSMTComponent init
+
+Ref Designator: C2
+X Coordinate: 31.75
+Y Coordinate: 21.59
+Board Side: 0
+Rotation: 10u
+Part Name: C0805
+
+
+TESTING AltiumSMTComponent Methods
+Changing reference designator
+Changing X Coordinate
+Changing Y Coordinate
+Changing Board Side
+Changing Rotation
+Changing part name
+
+Reprinting component attributes
+
+Ref Designator: World
+X Coordinate: 90
+Y Coordinate: 140
+Board Side: bottom
+Rotation: 113
+Part Name: My New Part Name
+
+Printing component attributes using getter methods
+World
+90
+140
+bottom
+113
+My New Part Name
+
+C:\PythonWorkspace\SMTComponent>
