@@ -1,0 +1,8 @@
+C:\PythonWorkspace\GCodeGenerator\Altium G Code>python main.py -c "altium-input.txt" -p "altium-parts-list.txt" -o "g-code-output.txt"
+
+
+Generating G Code Commands...
+
+
+
+G Code Commands have been written to: g-code-output.txt

@@ -1,0 +1,8 @@
+C:\PythonWorkspace\GCodeGenerator\Eagle G Code>python main.py -c "eagle-centroid.mnt" -p "eagle-parts.txt" -o "g-code-output.txt"
+
+
+Generating G Code Commands...
+
+
+
+G Code Commands have been written to: g-code-output.txt
