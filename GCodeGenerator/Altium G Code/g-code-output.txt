@@ -1,0 +1,219 @@
+;initializeGCode() configures start up settings. See GCodeGenerator.py to change
+G21; Set units to millimeters
+G90; Set absolute coordinates
+G28 X0 Y0; Home x and y axis
+G21; Set units to millimeters
+G90; Set absolute coordinates
+G28 X0 Y0; Home x and y axis
+G28 Z0; Home Z axis
+G1 F3000; Set feed rate (speed) for first move
+
+;Placing Part # 1
+G1 X0 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-925 Y1385; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 2
+G1 X5 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y-1320; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 3
+G1 X10 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y-120; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 4
+G1 X15 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y1080; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 5
+G1 X20 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-270 Y-1780; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 6
+G1 X25 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-270 Y-580; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 7
+G1 X30 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-270 Y620; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 8
+G1 X35 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y-1120; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 9
+G1 X40 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y80; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 10
+G1 X45 Y5; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y1280; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 11
+G1 X50 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y-1615; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 12
+G1 X55 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y-415; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 13
+G1 X60 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y785; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 14
+G1 X65 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y-1420; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 15
+G1 X70 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y-220; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 16
+G1 X75 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X-274.567 Y980; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 17
+G1 X80 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y-1415; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 18
+G1 X85 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y-215; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 19
+G1 X90 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y985; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 20
+G1 X95 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y-1115; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
+
+;Placing Part # 21
+G1 X100 Y25; moving to part for pick up
+G1 Z15; Lower Z axis to component
+M10; Vacuum On
+G1 Z0; Raise Z axis to home
+G1 X339.567 Y85; moving to location
+G1 Z15; Lower Z axis to PCB board
+M11; Vacuum Off
+G1 Z0; Raise Z axis to home
