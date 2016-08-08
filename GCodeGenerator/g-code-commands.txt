@@ -1,0 +1,83 @@
+G0 & G1: Move
+
+G0 : Rapid linear Move
+G1 : Linear Move
+
+Usage
+G0 Xnnn Ynnn Znnn Ennn Fnnn Snnn
+G1 Xnnn Ynnn Znnn Ennn Fnnn Snnn
+
+Parameters
+Not all parameters need to be used, but at least one has to be used
+Xnnn The position to move to on the X axis
+Ynnn The position to move to on the Y axis
+Znnn The position to move to on the Z axis
+Ennn The amount to extrude between the starting point and ending point
+Fnnn The feedrate per minute of the move between the starting point and ending point (if supplied)
+Snnn Flag to check if an endstop was hit (S1 to check, S0 to ignore, S2 see note, default is S0)1
+
+Examples
+G0 X12 (move to 12mm on the X axis)
+G0 F1500 (Set the feedrate to 1500mm/minute)
+G1 X90.6 Y13.8 E22.4 (Move to 90.6mm on the X axis and 13.8mm on the Y axis while extruding 22.4mm of material)
+The RepRap firmware spec treats G0 and G1 as the same command, since it's just as efficient as not doing so.2
+Most RepRap firmwares do subtle things with feedrates.
+1. G1 F1500
+2. G1 X50 Y25.3 E22.4
+In the above example, we set the feedrate to 1500mm/minute on line 1, then move to 50mm on the X axis and 25.3mm on the Y axis while extruding 22.4mm of filament between the two points.
+1. G1 F1500
+2. G1 X50 Y25.3 E22.4 F3000
+However, in the above example, we set a feedrate of 1500 mm/minute on line 1, then do the move described above accelerating to a feedrate of 3000 mm/minute as it does so. The extrusion will accelerate along with the X and Y movement, so everything stays synchronized.
+The RepRap spec treats the feedrate as simply another variable (like X, Y, Z, and E) to be linearly interpolated. This gives complete control over the acceleration and deceleration of the printer head in such a way that ensures that everything moves smoothly together, and the right volume of material is extruded at all points.3
+To reverse the extruder by a given amount (for example to reduce its internal pressure while it does an in-air movement so that it doesn't dribble) simply use G0 or G1 to send an E value that is less than the currently extruded length.
+
+
+
+
+
+G4: Dwell
+
+Parameters
+Pnnn Time to wait, in milliseconds
+Snnn Time to wait, in seconds (Only on Marlin and Smoothie)
+
+Example
+G4 P200
+In this case sit still doing nothing for 200 milliseconds. During delays the state of the machine (for example the temperatures of its extruders) will still be preserved and controlled.
+On Marlin and Smoothie, the "S" parameter will wait for seconds, while the "P" parameter will wait for milliseconds. "G4 S2" and "G4 P2000" are equivalent.
+
+
+
+
+
+
+G28: Move to Origin (Home)
+
+Parameters
+This command can be used without any additional parameters.
+X Flag to go back to the X axis origin
+Y Flag to go back to the Y axis origin
+Z Flag to go back to the Z axis origin
+
+Examples
+G28 (Go to origin on all axes)
+G28 X Z (Go to origin only on the X and Z axis)
+When the RepRap firmware receives this command, it moves all (or the supplied) axis's back to the zero endstops as quickly as it can, then backs off by a millimeter and slowly moves back to the zero endstop activation points to increase position accuracy. This process is also known as "Homing".
+If you add coordinates, these coordinates are ignored. For example, G28 Z0.00 results in the same behaviour as G28 Z.
+RepRapFirmware runs macro files to home either all axes or an individual one. If all axes are homed, the file homeall.g will be processed, and homex.g, homey.g, or homez.g if individual axes are homed. On a Delta printer, any G28 command will home all three towers by processing the homedelta.g file, regardless of any XYZ letters.
+
+
+
+
+
+M10: Vacuum On (CNC specific)	
+Example: M10
+Dust collection vacuum system turned on.
+
+
+
+
+M11: Vacuum Off (CNC specific)	
+Example: M11
+Dust collection vacuum system turned off.
+
