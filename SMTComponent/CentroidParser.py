@@ -1,8 +1,3 @@
-#Justin Johnson Summer 2016
-#CentroidPaser Class
-#Class accepts input centroid file and parses file to generate list of components
-#and a list for each component's attributes
-#Intended for use with Pick and Place Machine
 import re
 import os.path
 
@@ -17,7 +12,9 @@ class CentroidParser():
       self.input_file = open(self.input_path)
     except IOError:
       print("Constructor: Unable to open file.")
-  
+
+      
+        
   #@return path to file being read
   def getInputPath(self):
     return self.input_path   
@@ -40,6 +37,10 @@ class CentroidParser():
       self.input_file = open(self.input_path)
     except IOError:
       print("In resetFileIterator: Unable to re-open input file.")
+      
+  #Close file stream
+  def closeCentroidParser(self):
+    self.input_file.close()
     
   #Parses a line of text that contains component attributes
   #Accepts white space and comma delimited attributes
@@ -49,15 +50,18 @@ class CentroidParser():
   def parseComponentAttributes(self, component, attributeCount):
     #initialize list to store component attributes
     attributeList = []
-    #Use regex to split component attributes
-    attributes = re.split("[ ,]+", component, attributeCount)  
+    #Replace commas with white space, then split component attributes by whitespace
+    #Currently compatible with both Eagle and Altium centroid files
+    component = component.replace(",", " ")
+    attributes = component.split()
+    #attributes = re.split("[ ,]+", component, attributeCount)  
     for attribute in attributes:
       attributeList.append(attribute)
     return attributeList
     
     
 if __name__ == "__main__":
-  print("CentroidParser main()")
+  print("CentroidParser main() - CentroidParser is not intended to be run as main()")
 
 
   
