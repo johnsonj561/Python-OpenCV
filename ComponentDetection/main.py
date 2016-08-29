@@ -15,14 +15,16 @@ def main():
   highThreshold = args["high"]
   minComponentArea = args["minarea"]
 
-  #instantiate ComponentTracker object with input image
+  #create instance ComponentTracker object with input image
   mComponentTracker = ComponentTracker(inputImage)
+  
   #threshold image to create binary image
   mComponentTracker.thresholdImage(lowThreshold, highThreshold)
+  
   #detect contour rectangle that is >= minCompnentArea, neglecting insignificantly small contours
   rectangle = mComponentTracker.findContourRectangle(minComponentArea)
 
-  #if component was found, draw contours and commponent details on image & display
+  #if component was found, draw contours and commponent details on image & displaye then display to user
   if rectangle:
     mComponentTracker.drawContoursFromRectangle(rectangle)
     mComponentTracker.drawRectangleDetails(rectangle)

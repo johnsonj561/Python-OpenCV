@@ -1,5 +1,4 @@
 import numpy as np
-import numpy as np
 import cv2
 import time
 
@@ -18,7 +17,7 @@ class ComponentTracker():
     self.binary_image = cv2.inRange(self.input_image, lower, upper)
     cv2.imshow("Thresholded Output", self.binary_image)
     
-  #identify image contours and approximate them to remove unecessary noise
+  #identify image contours and approximate them to remove unwanted noise
   #@param minArea defines minimum component size to rule out insignifcantly small contours
   #@return Rectangle representation of component contours
   def findContourRectangle(self, minArea):
@@ -47,6 +46,12 @@ class ComponentTracker():
     box = np.int0(box)
     cv2.drawContours(self.input_image, [box], 0,(255, 0, 0), 1)
 
+    
+  def normalizeRectAngle(self, angle):
+    while(angle < -45 or angle > 45):
+      angle += 90
+    return angle
+  
   #draw pixel values of center (x,y) , dimensions (w,h) , and angle of rotation
   def drawRectangleDetails(self, rect):
     center = rect[0]
@@ -54,11 +59,15 @@ class ComponentTracker():
     dimensions = rect[1]
     dimensions = str(dimensions)
     angle = rect[2]
+    #angle = self.normalizeRectAngle(angle)
     angle = str(angle)
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.putText(self.input_image, 'Center: ' + center, (10, 50), font, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
     cv2.putText(self.input_image, "Dimensions: " + dimensions, (10, 70), font, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
     cv2.putText(self.input_image, "Angle of Rotation: " + angle, (10, 90), font, 0.5, (255, 0, 0), 1, cv2.LINE_AA)
+    
+    
+  
 
   #display output image to user a long with total number of components found
   def displayOutput(self):
