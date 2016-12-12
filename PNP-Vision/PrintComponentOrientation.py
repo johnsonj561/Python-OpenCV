@@ -54,7 +54,11 @@ def main():
     # During testing, re-sharpening image has proven effective
     print("Null")
     
-  cv2.waitKey()
+  
+  # If an image is being displayed to user, wait for keystroke before closing
+  if(showThresholdOutput || showResultOutput):
+    cv2.waitKey()
+  
   
 # Capture image from USB Camera and display to user
 def captureImage():
